@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PURA MILLA — Only miles. No fluff.</title>
+<meta name="description" content="Pura Milla is an NYC run club for everybody. Only miles. No fluff. Weekday evenings, weekend miles, all paces. Never the same run twice.">
+<meta property="og:title" content="PURA MILLA — NYC Run Club">
+<meta property="og:description" content="Only miles. No fluff. A run club for everybody.">
+<meta name="theme-color" content="#0D1B2A">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230D1B2A'/><text x='50' y='68' font-size='52' font-family='Arial Black,sans-serif' font-weight='900' text-anchor='middle' fill='%23E0334F'>PM</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2A;
+    --coral:#E0334F;
+    --teal:#1F9E96;
+    --mustard:#F2A900;
+    --cream:#F0E6DA;
+    --display:'Archivo',system-ui,sans-serif;
+    --body:'Space Grotesk',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--navy);
+    color:var(--cream);
+    font-family:var(--body);
+    font-size:1rem;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--coral);color:var(--cream)}
+
+  h1,h2,h3,.display{
+    font-family:var(--display);
+    font-weight:900;
+    font-stretch:110%;
+    text-transform:uppercase;
+    line-height:.92;
+    letter-spacing:-.01em;
+  }
+
+  .wrap{width:min(1120px,92vw);margin-inline:auto}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-delay="1"]{transition-delay:.1s}
+  .reveal[data-delay="2"]{transition-delay:.2s}
+  .reveal[data-delay="3"]{transition-delay:.3s}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .ticker-track{animation:none!important}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    position:relative;
+  }
+  .topbar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.25rem 0;
+    font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
+  }
+  .topbar .mark{color:var(--coral)}
+  .topbar a{color:var(--cream);text-decoration:none;border-bottom:2px solid var(--teal);padding-bottom:2px;transition:color .2s,border-color .2s}
+  .topbar a:hover{color:var(--mustard);border-color:var(--mustard)}
+
+  .hero-main{padding:2rem 0 3rem}
+  .hero-title{
+    font-size:clamp(3.6rem,15.5vw,15rem);
+    line-height:.85;
+    letter-spacing:-.02em;
+    white-space:nowrap;
+  }
+  .hero-title .l1{color:var(--cream);display:block}
+  .hero-title .l2{
+    display:block;
+    color:var(--coral);
+    -webkit-text-stroke:0;
+  }
+  .hero-title .l2 span:last-child{
+    color:transparent;
+    -webkit-text-stroke:3px var(--coral);
+  }
+  .hero-sub{
+    margin-top:1.75rem;
+    display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;
+  }
+  .tagline{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:clamp(1.1rem,3vw,1.6rem);
+    color:var(--teal);
+    letter-spacing:.02em;
+  }
+  .hero-copy{max-width:34ch;color:var(--cream);opacity:.85;font-size:1.05rem}
+
+  .btn{
+    display:inline-block;
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    letter-spacing:.04em;
+    background:var(--mustard);
+    color:var(--navy);
+    text-decoration:none;
+    font-size:1.05rem;
+    padding:1rem 2.2rem;
+    border:3px solid var(--mustard);
+    transition:transform .15s ease,background .2s,color .2s,box-shadow .15s ease;
+    box-shadow:6px 6px 0 var(--coral);
+  }
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--coral)}
+  .btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--coral)}
+  .hero-cta{margin-top:2.25rem}
+
+  /* ---------- ticker ---------- */
+  .ticker{
+    border-top:3px solid var(--cream);
+    border-bottom:3px solid var(--cream);
+    overflow:hidden;
+    background:var(--coral);
+    padding:.65rem 0;
+    white-space:nowrap;
+  }
+  .ticker-track{
+    display:inline-block;
+    animation:scroll 22s linear infinite;
+  }
+  .ticker-track span{
+    font-family:var(--display);font-weight:900;text-transform:uppercase;
+    font-size:1.1rem;letter-spacing:.06em;
+    color:var(--navy);
+    padding-right:2.5rem;
+  }
+  .ticker-track span em{font-style:normal;color:var(--cream)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{padding:5.5rem 0}
+  .kicker{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:.8rem;letter-spacing:.28em;
+    color:var(--mustard);
+    margin-bottom:1rem;
+  }
+  .h2{font-size:clamp(2.2rem,7vw,4.5rem);margin-bottom:2.5rem}
+  .h2 .alt{color:var(--teal)}
+  .h2 .alt2{color:var(--coral)}
+
+  /* ---------- founders ---------- */
+  .founders-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.25rem;
+  }
+  .founder{
+    position:relative;
+    padding:2rem 1.75rem 1.75rem;
+    min-height:340px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    overflow:hidden;
+    transition:transform .2s ease;
+  }
+  .founder:hover{transform:translateY(-6px)}
+  .founder.coral{background:var(--coral)}
+  .founder.teal{background:var(--teal)}
+  .founder .initial{
+    position:absolute;top:-.18em;right:-.05em;
+    font-family:var(--display);font-weight:900;
+    font-size:clamp(11rem,26vw,17rem);
+    line-height:1;
+    color:var(--navy);
+    opacity:.28;
+    user-select:none;
+    pointer-events:none;
+    transition:opacity .25s ease,transform .25s ease;
+  }
+  .founder:hover .initial{opacity:.42;transform:translateX(-4px)}
+  .founder h3{font-size:clamp(1.8rem,4.5vw,2.6rem);color:var(--cream)}
+  .founder .hood{
+    margin-top:.35rem;
+    font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;
+    color:var(--navy);
+  }
+  .founder .bio{margin-top:.75rem;color:var(--cream);opacity:.92;font-size:.95rem;max-width:32ch}
+  .founders-line{
+    margin-top:1.25rem;
+    grid-column:1 / -1;
+    border:3px solid var(--cream);
+    padding:1.25rem 1.5rem;
+    display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+  }
+  .founders-line p{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(1rem,3vw,1.4rem)}
+  .founders-line .miles{color:var(--mustard);font-family:var(--body);font-weight:500;font-size:.9rem;text-transform:none;letter-spacing:0}
+
+  /* ---------- how it works ---------- */
+  .how-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:1.25rem;
+  }
+  .how-card{
+    border:3px solid var(--cream);
+    padding:1.75rem 1.5rem;
+    display:flex;flex-direction:column;gap:.75rem;
+    transition:transform .2s ease,background .2s ease;
+  }
+  .how-card:hover{transform:translateY(-6px)}
+  .how-card .num{
+    font-family:var(--display);font-weight:900;font-size:.9rem;
+    letter-spacing:.1em;
+    color:var(--coral);
+  }
+  .how-card h3{font-size:1.5rem}
+  .how-card p{opacity:.85;font-size:.95rem}
+  .how-card.c1{grid-column:span 3}
+  .how-card.c2{grid-column:span 3}
+  .how-card.c3{grid-column:span 2}
+  .how-card.c4{grid-column:span 4;background:var(--teal);border-color:var(--teal)}
+  .how-card.c4 .num{color:var(--navy)}
+  .how-card.c4 p{opacity:.95}
+  .how-card.c4 h3{color:var(--cream)}
+
+  /* ---------- next run (ticket) ---------- */
+  .next-run{background:var(--cream);color:var(--navy)}
+  .next-run .kicker{color:var(--coral)}
+  .next-run .h2{color:var(--navy)}
+  .ticket{
+    max-width:760px;
+    background:var(--navy);
+    color:var(--cream);
+    display:grid;
+    grid-template-columns:1fr auto;
+    position:relative;
+    box-shadow:10px 10px 0 var(--coral);
+  }
+  .ticket-main{padding:2rem 1.75rem}
+  .ticket-tag{
+    display:inline-block;
+    background:var(--mustard);color:var(--navy);
+    font-family:var(--display);font-weight:900;text-transform:uppercase;
+    font-size:.75rem;letter-spacing:.16em;
+    padding:.35rem .7rem;
+    margin-bottom:1.25rem;
+  }
+  .ticket-title{font-size:clamp(2rem,6vw,3.2rem)}
+  .ticket-title .dist{color:var(--coral)}
+  .ticket-meta{
+    margin-top:1.5rem;
+    display:grid;gap:.9rem;
+  }
+  .ticket-meta .row{display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:baseline}
+  .ticket-meta .lbl{
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:.7rem;letter-spacing:.18em;color:var(--teal);
+    min-width:64px;
+  }
+  .ticket-meta .val{font-size:.98rem}
+  .ticket-stub{
+    border-left:3px dashed var(--cream);
+    padding:2rem 1.25rem;
+    display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:1.5rem;
+    position:relative;
+  }
+  .ticket-stub::before,.ticket-stub::after{
+    content:"";
+    position:absolute;left:-14px;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--cream);
+  }
+  .ticket-stub::before{top:-14px}
+  .ticket-stub::after{bottom:-14px}
+  .stub-vert{
+    writing-mode:vertical-rl;
+    font-family:var(--display);font-weight:900;text-transform:uppercase;
+    letter-spacing:.2em;font-size:.8rem;
+    color:var(--mustard);
+  }
+  .barcode{
+    display:flex;gap:3px;height:64px;align-items:stretch;
+  }
+  .barcode i{background:var(--cream);width:3px}
+  .barcode i:nth-child(3n){width:6px}
+  .barcode i:nth-child(4n){width:2px}
+  .barcode i:nth-child(5n){width:5px}
+  .ticket-note{
+    margin-top:1.5rem;max-width:760px;
+    font-size:.9rem;color:var(--navy);opacity:.75;
+  }
+
+  /* ---------- follow ---------- */
+  .follow{text-align:left}
+  .handle{
+    font-family:var(--display);font-weight:900;text-transform:uppercase;
+    font-size:clamp(1.6rem,6vw,3.4rem);
+    color:var(--cream);
+    word-break:break-word;
+  }
+  .handle .at{color:var(--mustard)}
+  .socials{
+    margin-top:2rem;
+    display:flex;gap:1rem;flex-wrap:wrap;
+  }
+  .social{
+    display:flex;align-items:center;gap:.7rem;
+    border:3px solid var(--cream);
+    color:var(--cream);
+    text-decoration:none;
+    padding:.85rem 1.4rem;
+    font-family:var(--display);font-weight:800;text-transform:uppercase;
+    font-size:.9rem;letter-spacing:.08em;
+    transition:background .2s,color .2s,border-color .2s,transform .15s ease;
+  }
+  .social svg{width:22px;height:22px;fill:currentColor}
+  .social:hover{transform:translateY(-3px)}
+  .social.ig:hover{background:var(--coral);border-color:var(--coral)}
+  .social.tt:hover{background:var(--teal);border-color:var(--teal)}
+  .social.st:hover{background:var(--mustard);border-color:var(--mustard);color:var(--navy)}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:3px solid var(--cream);
+    padding:2.5rem 0 3rem;
+  }
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .foot .fh{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:1rem;letter-spacing:.06em}
+  .foot .fh span{color:var(--coral)}
+  .foot .close{color:var(--teal);font-weight:700;font-size:.95rem}
+
+  /* ---------- mobile ---------- */
+  @media (max-width:720px){
+    section{padding:3.75rem 0}
+    .founders-grid{grid-template-columns:1fr}
+    .founder{min-height:280px}
+    .how-grid{grid-template-columns:1fr}
+    .how-card.c1,.how-card.c2,.how-card.c3,.how-card.c4{grid-column:auto}
+    .ticket{grid-template-columns:1fr}
+    .ticket-stub{
+      border-left:none;border-top:3px dashed var(--cream);
+      flex-direction:row;padding:1.25rem 1.75rem;
+    }
+    .ticket-stub::before{top:-14px;left:auto;right:-14px}
+    .ticket-stub::after{top:-14px;bottom:auto;left:-14px}
+    .stub-vert{writing-mode:horizontal-tb}
+    .barcode{height:40px}
+    .foot{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="mark">PM&nbsp;— NYC</div>
+      <a href="https://instagram.com/puramillaclub" target="_blank" rel="noopener">@puramillaclub</a>
+    </div>
+  </div>
+
+  <div class="wrap hero-main">
+    <h1 class="hero-title">
+      <span class="l1">PURA</span>
+      <span class="l2"><span>MIL</span><span>LA</span></span>
+    </h1>
+    <div class="hero-sub">
+      <p class="tagline">Only miles. No fluff.</p>
+      <p class="hero-copy">A run club for everybody. Fast, slow, first-timer, marathoner — if you show up, you're in.</p>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="https://instagram.com/puramillaclub" target="_blank" rel="noopener">Run With Us&nbsp;→</a>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Pura Milla <em>★</em> Only Miles <em>★</em> NYC <em>★</em> All Paces <em>★</em> Never the Same Run Twice <em>★</em>&nbsp;</span><span>Pura Milla <em>★</em> Only Miles <em>★</em> NYC <em>★</em> All Paces <em>★</em> Never the Same Run Twice <em>★</em>&nbsp;</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ FOUNDERS ============ -->
+<section id="founders">
+  <div class="wrap">
+    <p class="kicker reveal">The founders</p>
+    <h2 class="h2 reveal">Two neighborhoods.<br><span class="alt2">One run club.</span></h2>
+    <div class="founders-grid">
+      <div class="founder coral reveal" data-delay="1">
+        <span class="initial" aria-hidden="true">E</span>
+        <h3>Eric</h3>
+        <p class="hood">Sunset Park, Brooklyn</p>
+        <p class="bio">Brings the Brooklyn miles. Believes the best conversations happen mid-run.</p>
+      </div>
+      <div class="founder teal reveal" data-delay="2">
+        <span class="initial" aria-hidden="true">M</span>
+        <h3>Melvin</h3>
+        <p class="hood">Harlem</p>
+        <p class="bio">Holds it down uptown. Will talk you into one more mile — and you'll thank him.</p>
+      </div>
+      <div class="founders-line reveal" data-delay="3">
+        <p>Brooklyn ↔ Harlem, and every block in between.</p>
+        <p class="miles">The whole city is the route.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <p class="kicker reveal">How it works</p>
+    <h2 class="h2 reveal">No memberships.<br><span class="alt">Just show up.</span></h2>
+    <div class="how-grid">
+      <div class="how-card c1 reveal">
+        <span class="num">01</span>
+        <h3>Weekday evenings</h3>
+        <p>Clock out, lace up. We run after work — sweat out the day before you're home.</p>
+      </div>
+      <div class="how-card c2 reveal" data-delay="1">
+        <span class="num">02</span>
+        <h3>Weekend miles</h3>
+        <p>Morning or evening runs on weekends — check the feed for the call time.</p>
+      </div>
+      <div class="how-card c3 reveal" data-delay="2">
+        <span class="num">03</span>
+        <h3>All paces</h3>
+        <p>Nobody gets dropped. Ever.</p>
+      </div>
+      <div class="how-card c4 reveal" data-delay="3">
+        <span class="num">04</span>
+        <h3>Never the same run twice</h3>
+        <p>New meetup spot, new route, every single time. Follow the socials to know where we're pulling up next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT RUN ============ -->
+<section class="next-run" id="next-run">
+  <div class="wrap">
+    <p class="kicker reveal">Up next</p>
+    <h2 class="h2 reveal">Your entry pass.</h2>
+    <div class="ticket reveal" data-delay="1">
+      <div class="ticket-main">
+        <span class="ticket-tag">Admit everybody</span>
+        <h3 class="ticket-title"><span class="dist">5K</span> · Hudson River Greenway</h3>
+        <div class="ticket-meta">
+          <div class="row"><span class="lbl">Route</span><span class="val">Out-and-back along the Hudson River Greenway</span></div>
+          <div class="row"><span class="lbl">Meet</span><span class="val">Brookfield Place Ferry Terminal — waterfront side</span></div>
+          <div class="row"><span class="lbl">Date</span><span class="val">TBA — announced on the socials</span></div>
+          <div class="row"><span class="lbl">Pace</span><span class="val">All paces. We finish together.</span></div>
+        </div>
+      </div>
+      <div class="ticket-stub" aria-hidden="true">
+        <span class="stub-vert">Pura Milla · NYC</span>
+        <div class="barcode">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+    </div>
+    <p class="ticket-note reveal" data-delay="2">No ticket needed, obviously. Just you and your shoes. Date drops on <a href="https://instagram.com/puramillaclub" target="_blank" rel="noopener" style="color:#E0334F;font-weight:700">Instagram</a> first.</p>
+  </div>
+</section>
+
+<!-- ============ FOLLOW ============ -->
+<section class="follow" id="follow">
+  <div class="wrap">
+    <p class="kicker reveal">Don't miss the drop</p>
+    <h2 class="handle reveal"><span class="at">@</span>puramillaclub</h2>
+    <div class="socials reveal" data-delay="1">
+      <a class="social ig" href="https://instagram.com/puramillaclub" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.7 3.7 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.9 5.9 0 0 0-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13a5.9 5.9 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84Zm0 10.15a4 4 0 1 1 0-7.98 4 4 0 0 1 0 7.98ZM19.85 5.6a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0Z"/></svg>
+        Instagram
+      </a>
+      <a class="social tt" href="https://tiktok.com/@puramillaclub" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.32 5.56a5.1 5.1 0 0 1-3.08-3.9A5.3 5.3 0 0 1 16.15.5h-3.63v14.5a3.07 3.07 0 1 1-3.07-3.07c.32 0 .62.05.91.14V8.36a6.8 6.8 0 0 0-.91-.06 6.77 6.77 0 1 0 6.77 6.77V8.7a8.66 8.66 0 0 0 5.06 1.62V6.7a5.1 5.1 0 0 1-1.96-1.14Z"/></svg>
+        TikTok
+      </a>
+      <a class="social st" href="https://strava.com/clubs/puramillaclub" target="_blank" rel="noopener" aria-label="Strava">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.39 13.94 13.16 9.6l-2.24 4.34h3.33l1.14 2.25 1.15-2.25h4.35L15.39 22l-5.5-8.06ZM10.92 0 3.5 13.94h4.4l3.02-5.6 3.01 5.6h4.4L10.92 0Z"/></svg>
+        Strava
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot">
+    <p class="fh"><span>@</span>puramillaclub</p>
+    <p class="close">We finish together.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    for(const e of entries){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    }
+  },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
