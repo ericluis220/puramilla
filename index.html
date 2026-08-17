@@ -5,9 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PURA MILLA — Only miles. No fluff.</title>
 <meta name="description" content="Pura Milla is an NYC run club for everybody. Only miles. No fluff. Weekday evenings, weekend miles, all paces. Never the same run twice.">
-<meta property="og:title" content="PURA MILLA — NYC Run Club">
-<meta property="og:description" content="Only miles. No fluff. A run club for everybody.">
 <meta name="theme-color" content="#0D1B2A">
+<link rel="canonical" href="https://ericluis220.github.io/puramilla/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pura Milla">
+<meta property="og:title" content="PURA MILLA — NYC Run Club">
+<meta property="og:description" content="Only miles. No fluff. A run club for everybody. All paces, never the same run twice.">
+<meta property="og:url" content="https://ericluis220.github.io/puramilla/">
+<meta property="og:image" content="https://ericluis220.github.io/puramilla/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PURA MILLA — only miles, no fluff. NYC run club.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PURA MILLA — NYC Run Club">
+<meta name="twitter:description" content="Only miles. No fluff. A run club for everybody.">
+<meta name="twitter:image" content="https://ericluis220.github.io/puramilla/og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230D1B2A'/><text x='50' y='68' font-size='52' font-family='Arial Black,sans-serif' font-weight='900' text-anchor='middle' fill='%23E0334F'>PM</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +46,7 @@
     overflow-x:hidden;
   }
   ::selection{background:var(--coral);color:var(--cream)}
+  :focus-visible{outline:3px solid var(--mustard);outline-offset:3px}
 
   h1,h2,h3,.display{
     font-family:var(--display);
@@ -71,7 +84,7 @@
     padding:1.25rem 0;
     font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
   }
-  .topbar .mark{color:var(--coral)}
+  .topbar .mark{color:var(--mustard)}
   .topbar a{color:var(--cream);text-decoration:none;border-bottom:2px solid var(--teal);padding-bottom:2px;transition:color .2s,border-color .2s}
   .topbar a:hover{color:var(--mustard);border-color:var(--mustard)}
 
@@ -184,13 +197,19 @@
     transition:opacity .25s ease,transform .25s ease;
   }
   .founder:hover .initial{opacity:.42;transform:translateX(-4px)}
-  .founder h3{font-size:clamp(1.8rem,4.5vw,2.6rem);color:var(--cream)}
+  .founder h3{font-size:clamp(1.8rem,4.5vw,2.6rem);color:var(--navy)}
   .founder .hood{
-    margin-top:.35rem;
-    font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;
+    margin-top:.4rem;
+    font-family:var(--display);font-weight:800;
+    text-transform:uppercase;letter-spacing:.14em;font-size:1.2rem;
     color:var(--navy);
   }
-  .founder .bio{margin-top:.75rem;color:var(--cream);opacity:.92;font-size:.95rem;max-width:32ch}
+  .founder .bio{
+    margin-top:.85rem;
+    color:var(--navy);
+    font-weight:700;font-size:1.2rem;line-height:1.35;
+    max-width:26ch;
+  }
   .founders-line{
     margin-top:1.25rem;
     grid-column:1 / -1;
@@ -217,7 +236,7 @@
   .how-card .num{
     font-family:var(--display);font-weight:900;font-size:.9rem;
     letter-spacing:.1em;
-    color:var(--coral);
+    color:var(--teal);
   }
   .how-card h3{font-size:1.5rem}
   .how-card p{opacity:.85;font-size:.95rem}
@@ -226,12 +245,12 @@
   .how-card.c3{grid-column:span 2}
   .how-card.c4{grid-column:span 4;background:var(--teal);border-color:var(--teal)}
   .how-card.c4 .num{color:var(--navy)}
-  .how-card.c4 p{opacity:.95}
-  .how-card.c4 h3{color:var(--cream)}
+  .how-card.c4 h3{color:var(--navy)}
+  .how-card.c4 p{color:var(--navy);opacity:1;font-weight:500}
 
   /* ---------- next run (ticket) ---------- */
   .next-run{background:var(--cream);color:var(--navy)}
-  .next-run .kicker{color:var(--coral)}
+  .next-run .kicker{color:var(--navy)}
   .next-run .h2{color:var(--navy)}
   .ticket{
     max-width:760px;
@@ -293,8 +312,9 @@
   .barcode i:nth-child(5n){width:5px}
   .ticket-note{
     margin-top:1.5rem;max-width:760px;
-    font-size:.9rem;color:var(--navy);opacity:.75;
+    font-size:.95rem;color:var(--navy);opacity:.85;
   }
+  .ticket-note a{color:var(--navy);font-weight:700;text-underline-offset:3px}
 
   /* ---------- follow ---------- */
   .follow{text-align:left}
@@ -316,14 +336,14 @@
     text-decoration:none;
     padding:.85rem 1.4rem;
     font-family:var(--display);font-weight:800;text-transform:uppercase;
-    font-size:.9rem;letter-spacing:.08em;
+    font-size:1.2rem;letter-spacing:.06em;
     transition:background .2s,color .2s,border-color .2s,transform .15s ease;
   }
-  .social svg{width:22px;height:22px;fill:currentColor}
-  .social:hover{transform:translateY(-3px)}
-  .social.ig:hover{background:var(--coral);border-color:var(--coral)}
-  .social.tt:hover{background:var(--teal);border-color:var(--teal)}
-  .social.st:hover{background:var(--mustard);border-color:var(--mustard);color:var(--navy)}
+  .social svg{width:24px;height:24px;fill:currentColor}
+  .social:hover,.social:focus-visible{transform:translateY(-3px);color:var(--navy)}
+  .social.ig:hover,.social.ig:focus-visible{background:var(--coral);border-color:var(--coral)}
+  .social.tt:hover,.social.tt:focus-visible{background:var(--teal);border-color:var(--teal)}
+  .social.st:hover,.social.st:focus-visible{background:var(--mustard);border-color:var(--mustard)}
 
   /* ---------- footer ---------- */
   footer{
@@ -332,7 +352,7 @@
   }
   .foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
   .foot .fh{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:1rem;letter-spacing:.06em}
-  .foot .fh span{color:var(--coral)}
+  .foot .fh span{color:var(--mustard)}
   .foot .close{color:var(--teal);font-weight:700;font-size:.95rem}
 
   /* ---------- mobile ---------- */
@@ -397,13 +417,13 @@
         <span class="initial" aria-hidden="true">E</span>
         <h3>Eric</h3>
         <p class="hood">Sunset Park, Brooklyn</p>
-        <p class="bio">Brings the Brooklyn miles. Believes the best conversations happen mid-run.</p>
+        <p class="bio">Brooklyn born. Waits until everyone crosses the finish line.</p>
       </div>
       <div class="founder teal reveal" data-delay="2">
         <span class="initial" aria-hidden="true">M</span>
         <h3>Melvin</h3>
         <p class="hood">Harlem</p>
-        <p class="bio">Holds it down uptown. Will talk you into one more mile — and you'll thank him.</p>
+        <p class="bio">Holds it down uptown. Leads us to the finish line.</p>
       </div>
       <div class="founders-line reveal" data-delay="3">
         <p>Brooklyn ↔ Harlem, and every block in between.</p>
@@ -466,7 +486,7 @@
         </div>
       </div>
     </div>
-    <p class="ticket-note reveal" data-delay="2">No ticket needed, obviously. Just you and your shoes. Date drops on <a href="https://instagram.com/puramillaclub" target="_blank" rel="noopener" style="color:#E0334F;font-weight:700">Instagram</a> first.</p>
+    <p class="ticket-note reveal" data-delay="2">No ticket needed, obviously. Just you and your shoes. Date drops on <a href="https://instagram.com/puramillaclub" target="_blank" rel="noopener">Instagram</a> first.</p>
   </div>
 </section>
 
@@ -484,7 +504,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.32 5.56a5.1 5.1 0 0 1-3.08-3.9A5.3 5.3 0 0 1 16.15.5h-3.63v14.5a3.07 3.07 0 1 1-3.07-3.07c.32 0 .62.05.91.14V8.36a6.8 6.8 0 0 0-.91-.06 6.77 6.77 0 1 0 6.77 6.77V8.7a8.66 8.66 0 0 0 5.06 1.62V6.7a5.1 5.1 0 0 1-1.96-1.14Z"/></svg>
         TikTok
       </a>
-      <a class="social st" href="https://strava.com/clubs/puramillaclub" target="_blank" rel="noopener" aria-label="Strava">
+      <a class="social st" href="https://strava.app.link/w6H8mVyfG5b" target="_blank" rel="noopener" aria-label="Strava">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.39 13.94 13.16 9.6l-2.24 4.34h3.33l1.14 2.25 1.15-2.25h4.35L15.39 22l-5.5-8.06ZM10.92 0 3.5 13.94h4.4l3.02-5.6 3.01 5.6h4.4L10.92 0Z"/></svg>
         Strava
       </a>
