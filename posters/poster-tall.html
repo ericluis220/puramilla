@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=1080, initial-scale=1"><style>
+@font-face{font-family:'Archivo';src:url(archivo.woff2) format('woff2');font-weight:400 900;font-stretch:62% 125%;}
+@font-face{font-family:'Space Grotesk';src:url(spacegrotesk.woff2) format('woff2');font-weight:300 700;}
+*{margin:0;padding:0;box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:root{--navy:#0D1B2A;--coral:#E0334F;--teal:#1F9E96;--mustard:#F2A900;--cream:#F0E6DA}
+body{width:1080px;height:1620px;background:var(--navy);font-family:'Space Grotesk',sans-serif;color:var(--cream);overflow:hidden;display:flex;flex-direction:column}
+.disp{font-family:'Archivo',sans-serif;font-weight:900;font-stretch:110%;text-transform:uppercase}
+.ticker{background:var(--coral);border-top:5px solid var(--cream);border-bottom:5px solid var(--cream);padding:14px 0;display:flex;align-items:center;justify-content:center;gap:26px;overflow:hidden;flex:none}
+.ticker b{font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;font-size:24px;letter-spacing:.08em;color:var(--navy);white-space:nowrap;flex:none}
+.ticker i{font-style:normal;color:var(--cream);font-size:20px;flex:none}
+.pad{padding:56px 72px 0;flex:1;display:flex;flex-direction:column}
+.eyebrow{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:26px;letter-spacing:.28em;color:var(--mustard)}
+h1{font-size:172px;line-height:.86;margin-top:20px;letter-spacing:-.02em}
+h1 .p{display:block;color:var(--cream)} h1 .m{display:block;color:var(--coral)}
+h1 .o{color:transparent;-webkit-text-stroke:5px var(--coral)}
+.tagrow{display:flex;align-items:baseline;gap:34px;margin-top:28px}
+.tag{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:40px;color:var(--teal)}
+.welcome{font-size:30px;font-weight:700;color:var(--cream)}
+.founders{display:flex;gap:26px;margin-top:34px}
+.fcard{flex:1;height:256px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:30px 34px}
+.fcard.c{background:var(--coral)} .fcard.t{background:var(--teal)}
+.ghost{position:absolute;top:-34px;right:-14px;font-family:'Archivo',sans-serif;font-weight:900;font-size:300px;line-height:1;color:var(--navy);opacity:.28}
+.fname{font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;font-size:58px;color:var(--navy)}
+.fhood{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:26px;letter-spacing:.14em;color:var(--navy);margin-top:6px}
+.fline{text-align:center;font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;color:var(--cream);margin-top:24px}
+.two{display:flex;gap:26px;margin-top:30px}
+.block{flex:1;border:5px solid var(--cream);padding:26px 32px}
+.lbl{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:.24em;color:var(--mustard);margin-bottom:8px}
+.big{font-size:42px;font-weight:700;color:var(--cream)}
+.small{font-size:24px;color:var(--cream);opacity:.85;margin-top:6px}
+.band{background:var(--coral);margin:32px -72px 0;padding:28px 72px}
+.band .lbl{color:var(--navy)}
+.band .big{color:var(--cream);font-size:40px;font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase}
+.foot{background:var(--teal);margin-top:auto;padding:30px 72px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.foot .scan{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;letter-spacing:.2em;color:var(--navy)}
+.foot .handle{font-family:'Archivo',sans-serif;font-weight:900;font-size:52px;color:var(--navy);margin-top:6px}
+.foot .nets{font-size:26px;font-weight:700;color:var(--navy);margin-top:6px}
+.qrbox{background:var(--cream);padding:14px;flex:none;box-shadow:10px 10px 0 var(--navy)}
+.qrbox img{display:block;width:190px;height:190px}
+</style></head><body>
+<div class="ticker"><b>Pura Milla</b><i>★</i><b>Only Miles</b><i>★</i><b>NYC</b><i>★</i><b>All Paces</b><i>★</i><b>Never the Same Run Twice</b><i>★</i><b>Pura Milla</b><i>★</i><b>Only Miles</b><i>★</i><b>NYC</b><i>★</i></div>
+<div class="pad">
+  <div class="eyebrow">Sunset Park · Harlem · NYC</div>
+  <h1 class="disp"><span class="p">PURA</span><span class="m">MIL<span class="o">LA</span></span></h1>
+  <div class="tagrow"><div class="tag">Only miles. No fluff.</div><div class="welcome">Todos bienvenidos.</div></div>
+  <div class="founders">
+    <div class="fcard c"><div class="ghost">E</div><div class="fname">Eric</div><div class="fhood">Sunset Park</div></div>
+    <div class="fcard t"><div class="ghost">M</div><div class="fname">Melvin</div><div class="fhood">Harlem</div></div>
+  </div>
+  <div class="fline">Two neighborhoods. One run club.</div>
+  <div class="two">
+    <div class="block"><div class="lbl">Weekdays</div><div class="big">Evening runs</div><div class="small">After work, city lights on</div></div>
+    <div class="block"><div class="lbl">Weekends</div><div class="big">Morning or evening</div><div class="small">Your call — we post it</div></div>
+  </div>
+  <div class="band"><div class="lbl">No fixed meetup spot</div><div class="big">Different spot. Different route.</div></div>
+</div>
+<div class="foot">
+  <div><div class="scan">Scan to run with us</div><div class="handle">@puramillaclub</div><div class="nets">Instagram · TikTok · Strava</div></div>
+  <div class="qrbox"><img src="data:image/png;base64,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" alt="QR"></div>
+</div>
+</body></html>
