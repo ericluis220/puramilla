@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=1080, initial-scale=1"><style>
+@font-face{font-family:'Archivo';src:url(archivo.woff2) format('woff2');font-weight:400 900;font-stretch:62% 125%;}
+@font-face{font-family:'Space Grotesk';src:url(spacegrotesk.woff2) format('woff2');font-weight:300 700;}
+*{margin:0;padding:0;box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:root{--navy:#0D1B2A;--coral:#E0334F;--teal:#1F9E96;--mustard:#F2A900;--cream:#F0E6DA}
+body{width:1080px;height:1080px;background:var(--navy);font-family:'Space Grotesk',sans-serif;color:var(--cream);overflow:hidden;display:flex;flex-direction:column}
+.disp{font-family:'Archivo',sans-serif;font-weight:900;font-stretch:110%;text-transform:uppercase}
+.ticker{background:var(--coral);border-top:5px solid var(--cream);border-bottom:5px solid var(--cream);padding:14px 0;display:flex;align-items:center;justify-content:center;gap:26px;overflow:hidden;flex:none}
+.ticker b{font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;font-size:24px;letter-spacing:.08em;color:var(--navy);white-space:nowrap;flex:none}
+.ticker i{font-style:normal;color:var(--cream);font-size:20px;flex:none}
+.pad{padding:52px 72px 0;flex:1;display:flex;flex-direction:column}
+.eyebrow{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:26px;letter-spacing:.3em;color:var(--mustard);text-align:center}
+h1{font-size:100px;line-height:1;text-align:center;margin-top:16px;letter-spacing:-.02em;white-space:nowrap}
+h1 .p{color:var(--cream)} h1 .m{color:var(--coral)}
+h1 .o{color:transparent;-webkit-text-stroke:4px var(--coral)}
+.rule{width:180px;height:8px;background:var(--teal);margin:22px auto 30px}
+.dist{display:flex;align-items:center;gap:30px;margin-bottom:36px}
+.badge{background:var(--coral);color:var(--cream);font-family:'Archivo',sans-serif;font-weight:900;font-size:44px;padding:14px 38px;box-shadow:10px 10px 0 var(--mustard)}
+.dist p{font-size:32px;font-weight:700;line-height:1.3}
+.block{border:5px solid var(--cream);padding:28px 34px;margin-bottom:26px}
+.lbl{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:.24em;color:var(--mustard);margin-bottom:10px}
+.big{font-size:46px;font-weight:700;color:var(--cream);line-height:1.15}
+.sub{font-size:26px;font-weight:700;color:var(--teal);margin-top:8px}
+.two{display:flex;gap:26px}
+.two .block{flex:1;margin-bottom:0}
+.big.xs{font-size:36px}
+.taco{background:var(--mustard);margin:20px 0 0;padding:16px 28px}
+.taco .tl{font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;font-size:20px;letter-spacing:.2em;color:var(--navy)}
+.taco .tb{font-size:30px;font-weight:700;color:var(--navy);margin-top:4px}
+.closing{text-align:center;font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;letter-spacing:.06em;color:var(--mustard);margin:auto 0 30px}
+.foot{background:var(--teal);padding:24px 0;text-align:center}
+.foot span{font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;font-size:34px;letter-spacing:.14em;color:var(--navy)}
+</style></head><body>
+<div class="ticker"><b>Pura Milla</b><i>★</i><b>Only Miles</b><i>★</i><b>NYC</b><i>★</i><b>All Paces</b><i>★</i><b>Pura Milla</b><i>★</i><b>Only Miles</b><i>★</i><b>NYC</b><i>★</i><b>All Paces</b><i>★</i></div>
+<div class="pad">
+  <div class="eyebrow">Run 03 · Tercera Corrida</div>
+  <h1 class="disp"><span class="p">PURA</span> <span class="m">MIL<span class="o">LA</span></span></h1>
+  <div class="rule"></div>
+  <div class="dist"><div class="badge disp">RUN 03</div><p>Back to work.<br>Back to miles.</p></div>
+  <div class="block"><div class="lbl">Meet at</div><div class="big">Sunset Park</div><div class="sub">41st St &amp; 5th Ave entrance — laps around the park, hop in any lap</div></div>
+  <div class="two">
+    <div class="block"><div class="lbl">When</div><div class="big xs">Tue, Sept 8 · 7 PM</div></div>
+    <div class="block"><div class="lbl">Pace</div><div class="big xs">All paces</div></div>
+  </div>
+  <div class="taco"><div class="tl">Tacos after</div><div class="tb">Tacos El Bronco · 37th &amp; 5th — bring cash</div></div>
+  <div class="closing">Todos Bienvenidos · We Finish Together</div>
+</div>
+<div class="foot"><span>@puramillaclub</span></div>
+</body></html>
