@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PURA MILLA — Only miles. No fluff.</title>
-<meta name="description" content="Pura Milla is an NYC run club for everybody. Only miles. No fluff. Weekday evenings, weekend miles, all paces. Never the same run twice.">
+<meta name="description" content="Pura Milla is an NYC run club for everybody. Tuesdays in the Bronx, Thursdays at Owl's Head, Sundays somewhere new. All paces. Only miles. No fluff.">
 <meta name="theme-color" content="#0D1B2A">
 <link rel="canonical" href="https://ericluis220.github.io/puramilla/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pura Milla">
 <meta property="og:title" content="PURA MILLA — NYC Run Club">
-<meta property="og:description" content="Only miles. No fluff. A run club for everybody. All paces, never the same run twice.">
+<meta property="og:description" content="Only miles. No fluff. Three runs a week across NYC, all paces, free.">
 <meta property="og:url" content="https://ericluis220.github.io/puramilla/">
 <meta property="og:image" content="https://ericluis220.github.io/puramilla/og.png">
 <meta property="og:image:width" content="1200">
@@ -316,6 +316,19 @@
   }
   .ticket-note a{color:var(--navy);font-weight:700;text-underline-offset:3px}
 
+  /* ---------- schedule ---------- */
+  .sched{margin-top:3rem;max-width:760px}
+  .sched-h{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:.8rem;letter-spacing:.28em;color:var(--navy);margin-bottom:.75rem}
+  .sched-list{list-style:none;border-top:3px solid var(--navy)}
+  .sched-list li{display:grid;grid-template-columns:4.2rem 5.2rem 1fr auto;gap:.75rem;align-items:baseline;padding:.7rem 0;border-bottom:2px solid var(--navy);font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:.9rem;letter-spacing:.04em;color:var(--navy);font-variant-numeric:tabular-nums}
+  .sched-list li .d{opacity:.7}
+  .sched-list li .p{font-family:var(--body);font-weight:700;text-transform:none;letter-spacing:0;font-size:1rem}
+  .sched-list li .s{font-size:.75rem;letter-spacing:.18em;padding:.2rem .5rem;border:2px solid var(--navy)}
+  .sched-list li.done{opacity:.62}
+  .sched-list li.next .s,.sched-list li.today .s{background:var(--mustard);border-color:var(--mustard);color:var(--navy)}
+  .sched-note{margin-top:.9rem;font-size:.9rem;color:var(--navy);opacity:.85}
+  @media (max-width:720px){.sched-list li{grid-template-columns:3.6rem 4.6rem 1fr auto;font-size:.8rem}.sched-list li .p{font-size:.92rem}}
+
   /* ---------- follow ---------- */
   .follow{text-align:left}
   .handle{
@@ -440,24 +453,24 @@
     <h2 class="h2 reveal">No memberships.<br><span class="alt">Just show up.</span></h2>
     <div class="how-grid">
       <div class="how-card c1 reveal">
-        <span class="num">01</span>
-        <h3>Weekday evenings</h3>
-        <p>Clock out, lace up. We run after work — sweat out the day before you're home.</p>
+        <span class="num">Tuesdays</span>
+        <h3>The Bronx</h3>
+        <p>7 PM on the track at Macombs Dam Park — right next to Yankee Stadium. Laps, hop in any lap.</p>
       </div>
       <div class="how-card c2 reveal" data-delay="1">
-        <span class="num">02</span>
-        <h3>Weekend miles</h3>
-        <p>Morning or evening runs on weekends — check the feed for the call time.</p>
+        <span class="num">Thursdays</span>
+        <h3>Los Jueves</h3>
+        <p>7 PM at Owl's Head Park, every week. Push-ups, pull-ups, core — then the pier. Bring your challenge.</p>
       </div>
       <div class="how-card c3 reveal" data-delay="2">
-        <span class="num">03</span>
-        <h3>All paces</h3>
-        <p>Nobody gets dropped. Ever.</p>
+        <span class="num">Sundays</span>
+        <h3>Explore</h3>
+        <p>9 AM, somewhere new. Bridges, islands, parks. Never the same one twice.</p>
       </div>
       <div class="how-card c4 reveal" data-delay="3">
-        <span class="num">04</span>
-        <h3>Never the same run twice</h3>
-        <p>New meetup spot, new route, every single time. Follow the socials to know where we're pulling up next.</p>
+        <span class="num">Always</span>
+        <h3>All paces. Nobody gets dropped.</h3>
+        <p>Free. No membership. Walk-ups welcome. Food after, every time. If you show up, you're in.</p>
       </div>
     </div>
   </div>
@@ -466,17 +479,17 @@
 <!-- ============ NEXT RUN ============ -->
 <section class="next-run" id="next-run">
   <div class="wrap">
-    <p class="kicker reveal">Up next</p>
+    <p class="kicker reveal" id="tk-kicker">Up next</p>
     <h2 class="h2 reveal">Your entry pass.</h2>
     <div class="ticket reveal" data-delay="1">
       <div class="ticket-main">
         <span class="ticket-tag">Admit everybody</span>
-        <h3 class="ticket-title"><span class="dist">Run 03</span> · Sunset Park</h3>
+        <h3 class="ticket-title"><span class="dist" id="tk-num">Run 03</span> · <span id="tk-place">Sunset Park</span></h3>
         <div class="ticket-meta">
-          <div class="row"><span class="lbl">Meet</span><span class="val">Sunset Park — 41st St &amp; 5th Ave entrance, Brooklyn</span></div>
-          <div class="row"><span class="lbl">When</span><span class="val">Wednesday, Sept 9 · 7:00 PM — moved from Tuesday</span></div>
-          <div class="row"><span class="lbl">Route</span><span class="val">Laps around the park — hop in on any lap</span></div>
-          <div class="row"><span class="lbl">After</span><span class="val">Tacos at El Bronco, 37th &amp; 5th — bring cash</span></div>
+          <div class="row"><span class="lbl">Meet</span><span class="val" id="tk-meet">Sunset Park — 41st St &amp; 5th Ave entrance, Brooklyn</span></div>
+          <div class="row"><span class="lbl">When</span><span class="val" id="tk-when">Wednesday, Sept 9 · 7:00 PM</span></div>
+          <div class="row"><span class="lbl">Route</span><span class="val" id="tk-route">Laps around the park — hop in on any lap</span></div>
+          <div class="row"><span class="lbl">After</span><span class="val" id="tk-after">Tacos at El Bronco, 37th &amp; 5th — bring cash</span></div>
           <div class="row"><span class="lbl">Pace</span><span class="val">All paces. We finish together.</span></div>
           <div class="row"><span class="lbl">RSVP</span><span class="val">Free — just so we know numbers. Walk-ups always welcome.</span></div>
         </div>
@@ -489,6 +502,11 @@
       </div>
     </div>
     <p class="ticket-note reveal" data-delay="2">No ticket needed, obviously. Just you and your shoes. Date drops on <a href="https://instagram.com/puramillaclub" target="_blank" rel="noopener">Instagram</a> first — and if weather cancels a run, we call it there too, on our story and broadcast channel.</p>
+    <div class="sched reveal" data-delay="2">
+      <h3 class="sched-h">The month</h3>
+      <ol class="sched-list" id="sched"></ol>
+      <p class="sched-note">Tue · Thu · Sun. Anything changes, it's on the story by 3 PM.</p>
+    </div>
   </div>
 </section>
 
@@ -531,5 +549,48 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 
+<script>
+(function(){
+  var RUNS=[
+    {n:'03',d:'2026-09-09',t:'7:00 PM',place:'Sunset Park',short:'Sunset Park, Brooklyn',meet:'Sunset Park — 41st St & 5th Ave entrance, Brooklyn',route:'Laps around the park — hop in on any lap',after:'Tacos at El Bronco, 37th & 5th — bring cash'},
+    {n:'04',d:'2026-09-13',t:'9:00 AM',place:'Prospect Park',short:'Prospect Park loop',meet:'Grand Army Plaza — under the arch',route:'The 3.35-mile loop, car-free. Cut it short any time',after:'Bagels on 7th Ave'},
+    {n:'05',d:'2026-09-15',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park track — 161st St & Jerome Ave, next to Yankee Stadium',route:'Laps on the track — hop in on any lap',after:'161st St'},
+    {n:'06',d:'2026-09-17',t:'7:00 PM',place:'Los Jueves',short:"Owl's Head Park — Los Jueves",meet:"Owl's Head Park — calisthenics bars by the basketball courts, Colonial Rd & 68th St",route:'Push-ups, pull-ups, core — then the pier and Shore Road, out and back',after:'3rd Ave, Bay Ridge'},
+    {n:'07',d:'2026-09-20',t:'9:00 AM',place:'Brooklyn Bridge',short:'Brooklyn Bridge',meet:'Brooklyn Bridge Park, Pier 1 — Old Fulton St',route:'Over the bridge and back',after:'Coffee in Dumbo'},
+    {n:'08',d:'2026-09-22',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park track — 161st St & Jerome Ave, next to Yankee Stadium',route:'Laps on the track — hop in on any lap',after:'161st St'},
+    {n:'09',d:'2026-09-24',t:'7:00 PM',place:'Los Jueves',short:"Owl's Head Park — Los Jueves",meet:"Owl's Head Park — calisthenics bars by the basketball courts, Colonial Rd & 68th St",route:'Push-ups, pull-ups, core — then the pier and Shore Road, out and back',after:'3rd Ave, Bay Ridge'},
+    {n:'10',d:'2026-09-27',t:'9:00 AM',place:'Williamsburg Bridge',short:'Williamsburg Bridge',meet:'Domino Park — Kent Ave & S 3rd St',route:'Over the bridge and back',after:'Williamsburg'},
+    {n:'11',d:'2026-09-29',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park track — 161st St & Jerome Ave, next to Yankee Stadium',route:'Laps on the track — hop in on any lap',after:'161st St'},
+    {n:'12',d:'2026-10-04',t:'9:00 AM',place:"Randall's Island",short:"Randall's Island",meet:'Details soon',route:'Three boroughs, one island',after:'TBA'},
+    {n:'13',d:'2026-10-11',t:'9:00 AM',place:'Van Cortlandt',short:'Van Cortlandt Park, the Bronx',meet:'Details soon',route:'The cross-country course',after:'TBA'}
+  ];
+  var DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],MON=['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
+  function parts(d){var a=d.split('-');return new Date(+a[0],+a[1]-1,+a[2]);}
+  var now=new Date(),today=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+  var next=null;for(var i=0;i<RUNS.length;i++){if(RUNS[i].d>=today){next=RUNS[i];break;}}
+  if(next){
+    var dt=parts(next.d),isToday=next.d===today;
+    var set=function(id,v){var e=document.getElementById(id);if(e)e.textContent=v;};
+    set('tk-kicker',isToday?'Tonight':'Up next');
+    set('tk-num','Run '+next.n);set('tk-place',next.place);set('tk-meet',next.meet);
+    set('tk-when',DAYS[dt.getDay()]+', '+MON[dt.getMonth()]+' '+dt.getDate()+' · '+next.t);
+    set('tk-route',next.route);set('tk-after',next.after);
+  }
+  var ol=document.getElementById('sched');
+  if(ol){
+    var seenNext=false;
+    RUNS.forEach(function(r){
+      var dt=parts(r.d),li=document.createElement('li'),st,cls;
+      if(r.d<today){st='Done';cls='done';}
+      else if(r.d===today){st='Tonight';cls='today';seenNext=true;}
+      else if(!seenNext){st='Next';cls='next';seenNext=true;}
+      else{st='Soon';cls='';}
+      li.className=cls;
+      li.innerHTML='<span>Run '+r.n+'</span><span class="d">'+DAYS[dt.getDay()].slice(0,3)+' '+(dt.getMonth()+1)+'/'+dt.getDate()+'</span><span class="p">'+r.short+' · '+r.t+'</span><span class="s">'+st+'</span>';
+      ol.appendChild(li);
+    });
+  }
+})();
+</script>
 </body>
 </html>
