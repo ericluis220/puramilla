@@ -552,17 +552,20 @@
 <script>
 (function(){
   var RUNS=[
-    {n:'03',d:'2026-09-09',t:'7:00 PM',place:'Sunset Park',short:'Sunset Park, Brooklyn',meet:'Sunset Park — 41st St & 5th Ave entrance, Brooklyn',route:'Laps around the park — hop in on any lap',after:'Tacos at El Bronco, 37th & 5th — bring cash'},
-    {n:'04',d:'2026-09-13',t:'9:00 AM',place:'Prospect Park',short:'Prospect Park loop',meet:'Grand Army Plaza — under the arch',route:'The 3.35-mile loop, car-free. Cut it short any time',after:'Bagels on 7th Ave'},
-    {n:'05',d:'2026-09-15',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park track — 161st St & Jerome Ave, next to Yankee Stadium',route:'Laps on the track — hop in on any lap',after:'161st St'},
-    {n:'06',d:'2026-09-17',t:'7:00 PM',place:'Los Jueves',short:"Owl's Head Park — Los Jueves",meet:"Owl's Head Park — calisthenics bars by the basketball courts, Colonial Rd & 68th St",route:'Push-ups, pull-ups, core — then the pier and Shore Road, out and back',after:'Bora Bora Smoothie Cafe, 7322 3rd Ave — açaí, open till midnight'},
-    {n:'07',d:'2026-09-20',t:'9:00 AM',place:'Brooklyn Bridge',short:'Brooklyn Bridge',meet:'Brooklyn Bridge Park, Pier 1 — Old Fulton St',route:'Over the bridge and back',after:'Coffee in Dumbo'},
-    {n:'08',d:'2026-09-22',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park track — 161st St & Jerome Ave, next to Yankee Stadium',route:'Laps on the track — hop in on any lap',after:'161st St'},
-    {n:'09',d:'2026-09-24',t:'7:00 PM',place:'Los Jueves',short:"Owl's Head Park — Los Jueves",meet:"Owl's Head Park — calisthenics bars by the basketball courts, Colonial Rd & 68th St",route:'Push-ups, pull-ups, core — then the pier and Shore Road, out and back',after:'Bora Bora Smoothie Cafe, 7322 3rd Ave — açaí, open till midnight'},
-    {n:'10',d:'2026-09-27',t:'9:00 AM',place:'Williamsburg Bridge',short:'Williamsburg Bridge',meet:'Domino Park — Kent Ave & S 3rd St',route:'Over the bridge and back',after:'Williamsburg'},
-    {n:'11',d:'2026-09-29',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park track — 161st St & Jerome Ave, next to Yankee Stadium',route:'Laps on the track — hop in on any lap',after:'161st St'},
-    {n:'12',d:'2026-10-04',t:'9:00 AM',place:"Randall's Island",short:"Randall's Island",meet:'Details soon',route:'Three boroughs, one island',after:'TBA'},
-    {n:'13',d:'2026-10-11',t:'9:00 AM',place:'Van Cortlandt',short:'Van Cortlandt Park, the Bronx',meet:'Details soon',route:'The cross-country course',after:'TBA'}
+    {n:'01',d:'2026-08-30',t:'7:00 PM',place:'Astoria Park',short:'Astoria Park Track, Queens',meet:'Astoria Park Track, Queens',route:'Laps on the track',after:'31st St'},
+    {n:'02',d:'2026-09-01',t:'7:00 PM',place:'Astoria Park',short:'Astoria Park Track, Queens',meet:'Astoria Park Track, Queens',route:'Laps on the track',after:'31st St'},
+    {n:'03',d:'2026-09-09',t:'7:00 PM',place:'Sunset Park',short:'Sunset Park, Brooklyn',meet:'Sunset Park — 41st St & 5th Ave entrance, Brooklyn',route:'Laps around the park',after:'Tacos El Bronco, 37th & 5th'},
+    {n:'04',d:'2026-09-13',t:'9:00 AM',place:'Prospect Park',short:'Prospect Park loop',meet:'Grand Army Plaza — under the arch',route:'The 3.35-mile loop, car-free',after:'Bagels on 7th Ave'},
+    {n:'05',d:'2026-09-20',t:'9:00 AM',place:'Brooklyn Bridge',short:'Brooklyn Bridge',meet:'Primark at City Point',route:'Meet at Primark, jog to the bridge, over and back',after:'Coffee in Dumbo'},
+    {n:'06',d:'2026-09-22',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park Track',route:'Laps on the track — hop in on any lap',after:'161st St — pick the spot on the night'},
+    {n:'07',d:'2026-09-24',t:'7:00 PM',place:'Los Jueves',short:'Owl\'s Head Park — Los Jueves',meet:'Owl\'s Head Park',route:'Push-ups, pull-ups, core — then the pier and Shore Road',after:'Bora Bora Smoothie Cafe · 7322 3rd Ave'},
+    {n:'08',d:'2026-09-27',t:'9:00 AM',place:'Williamsburg Bridge',short:'Williamsburg Bridge',meet:'Domino Park',route:'Over the bridge and back',after:'Williamsburg'},
+    {n:'09',d:'2026-09-29',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park Track',route:'Laps on the track — hop in on any lap',after:'161st St — pick the spot on the night'},
+    {n:'10',d:'2026-10-01',t:'7:00 PM',place:'Los Jueves',short:'Owl\'s Head Park — Los Jueves',meet:'Owl\'s Head Park',route:'Push-ups, pull-ups, core — then the pier and Shore Road',after:'Bora Bora Smoothie Cafe · 7322 3rd Ave'},
+    {n:'11',d:'2026-10-04',t:'9:00 AM',place:'Randall\'s Island',short:'Randall\'s Island',meet:'Randall\'s Island',route:'Three boroughs, one island',after:'TBA'},
+    {n:'12',d:'2026-10-06',t:'7:00 PM',place:'The Bronx',short:'Macombs Dam Park track, the Bronx',meet:'Macombs Dam Park Track',route:'Laps on the track — hop in on any lap',after:'161st St — pick the spot on the night'},
+    {n:'13',d:'2026-10-08',t:'7:00 PM',place:'Los Jueves',short:'Owl\'s Head Park — Los Jueves',meet:'Owl\'s Head Park',route:'Push-ups, pull-ups, core — then the pier and Shore Road',after:'Bora Bora Smoothie Cafe · 7322 3rd Ave'},
+    {n:'14',d:'2026-10-11',t:'9:00 AM',place:'Van Cortlandt',short:'Van Cortlandt Park, the Bronx',meet:'Van Cortlandt Park',route:'The cross-country course',after:'TBA'}
   ];
   var DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],MON=['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
   function parts(d){var a=d.split('-');return new Date(+a[0],+a[1]-1,+a[2]);}
